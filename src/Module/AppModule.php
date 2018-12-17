@@ -16,6 +16,8 @@ class AppModule extends AbstractAppModule
         $appDir = $this->appMeta->appDir;
         require_once $appDir . '/env.php';
 
+        $this->bind(SchemeCollectionInterface::class)->toProvider(MySchemeCollectionProvider::class);
+
         $this->install(new PackageModule);
     }
 }
